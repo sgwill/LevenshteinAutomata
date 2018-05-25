@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
 
-namespace LevenshteinAutomaton
+namespace LevenshteinAutomata
 {
     /// <summary>
     /// Each node in the Trie.
@@ -43,9 +40,7 @@ namespace LevenshteinAutomaton
         public void AddTrieNode(string word)
         {
             if (string.IsNullOrEmpty(word)) return;
-            //Regex rgx = new Regex("[^a-zA-Z]");
-            //word = rgx.Replace(word, "");
-            //word = word.ToLowerInvariant();
+
             TrieNode cur = _root;
             for (int i = 0; i < word.Length; ++i)
             {
@@ -53,6 +48,7 @@ namespace LevenshteinAutomaton
                 {
                     cur.Children.Add(word[i], new TrieNode(word.Substring(0, i + 1)));
                 }
+
                 cur = cur.Children[word[i]];
                 if (i == word.Length - 1)
                     cur.End = true;

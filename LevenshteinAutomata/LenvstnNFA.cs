@@ -1,23 +1,23 @@
 ﻿using System;
-using SCG = System.Collections.Generic;
 using C5;
 
 using state = System.Int32;
 using input = System.Char;
 
-namespace LevenshteinAutomaton
+namespace LevenshteinAutomata
 {
-  /// <summary>
-  /// Implements a non-deterministic finite automata
-  /// </summary>
+    /// <summary>
+    /// Implements a non-deterministic finite automata
+    /// </summary>
     class LenvstnNFA
     {
         public state initial;
         public Set<state> final;
+
         // Inputs this NFA responds to
         public SortedArray<input> inputs;
         public input[][] transTable;
-        
+
         private int size;
 
         /// <summary>
@@ -179,10 +179,8 @@ namespace LevenshteinAutomaton
                     }
                 }
             }
+
             Console.Write("\n\n");
         }
-
-        
     }
-
 }

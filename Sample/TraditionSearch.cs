@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace LevenshteinAutomaton
+namespace LevenshteinAutomata.Sample
 {
     public class TraditionSearch
     {
@@ -54,7 +54,7 @@ namespace LevenshteinAutomaton
             {
                 for (int j = 1; j <= m; j++)
                 {
-                    cost = (t[j-1] == s[i-1] ? 0 : 1);
+                    cost = (t[j - 1] == s[i - 1] ? 0 : 1);
                     d[i, j] = System.Math.Min(System.Math.Min(d[i - 1, j] + 1, d[i, j - 1] + 1),
                               d[i - 1, j - 1] + cost);
                 }

@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace LevenshteinAutomaton
+namespace LevenshteinAutomata
 {
     public class AutomatonSearch
     {
@@ -38,7 +36,7 @@ namespace LevenshteinAutomaton
             }
         }
 
-        public static IEnumerable<string> search(string oriWord, int maxDist, TrieDictionary dict)
+        public static IEnumerable<string> Search(string oriWord, int maxDist, TrieDictionary dict)
         {
             LenvstnNFA nfa = LenvstnNFA.BuildNFA(oriWord, maxDist);
             //nfa.Show();

@@ -4,17 +4,19 @@ using System.Collections.Generic;
 using state = System.Int32;
 using input = System.Char;
 
-namespace LevenshteinAutomaton
+namespace LevenshteinAutomata
 {
-  /// <summary>
-  /// Implements a deterministic finite automata
-  /// </summary>
+    /// <summary>
+    /// Implements a deterministic finite automata
+    /// </summary>
     public class LenvstnDFA
     {
         // Start state
         public state start;
+
         // Set of final states
         public Set<state> final;
+
         // Transition table
         public SortedList<KeyValuePair<state, input>, state> transTable;
         public Dictionary<state, state> defaultTrans;
@@ -22,11 +24,9 @@ namespace LevenshteinAutomaton
         public LenvstnDFA()
         {
             final = new Set<state>();
-
             defaultTrans = new Dictionary<state, state>();
             transTable = new SortedList<KeyValuePair<state, input>, state>(new Comparer());
         }
-
 
         public void Show()
         {
@@ -61,5 +61,4 @@ namespace LevenshteinAutomaton
                 return transition1.Key.CompareTo(transition2.Key);
         }
     }
-
 }
