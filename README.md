@@ -1,4 +1,8 @@
 # LevenshteinAutomaton
+###
+
+Forked from [https://github.com/felixfang/LevenshteinAutomaton](https://github.com/felixfang/LevenshteinAutomaton) to convert to .NET Standard
+
 ### Introduction to algorithm
 A Levenshtein Automaton implemented in C#, for fuzzy searching.
 
